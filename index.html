@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Thief - Jeu Infiltration</title>
+    <meta name="description"
+        content="Shadow Thief est un jeu d'exploration, discrétion et rapidité. Découvrez notre projet, l'équipe, et nos ressources.">
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo">
+                <img src="../Shadow-Thief2/assets/logo.png" alt="Shadow Thief Logo" class="nav-logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#presentation">Le Projet</a></li>
+                <li><a href="#equipe">L'Équipe</a></li>
+                <li><a href="#ressources">Ressources</a></li>
+                <li><a href="#telechargement" class="btn-primary">Télécharger</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="../Shadow-Thief2/assets/logo.png" alt="Shadow Thief Logo" class="hero-logo"
+                style="max-width: 600px; width: 100%; margin-bottom: 1.5rem; filter: drop-shadow(0 0 25px rgba(16, 185, 129, 0.5)); transform: scale(1.1); animation: pulse-ring 4s infinite;">
+            <p class="subtitle">Exploration • Discrétion • Rapidité</p>
+            <p class="desc">Un jeu casual accessible à tous. Fondez-vous dans l'ombre et volez la victoire.</p>
+            <div class="hero-buttons">
+                <a href="#telechargement" class="btn-primary pulse">Jouer Maintenant</a>
+                <a href="#presentation" class="btn-secondary">Découvrir le jeu</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Présentation Section -->
+    <section class="section" id="presentation">
+        <div class="container">
+            <h2 class="section-title">Présentation du Projet</h2>
+            <div class="grid presentation-grid">
+                <div class="card glass">
+                    <img src="../Shadow-Thief2/assets/ground.png" alt="Exploration" class="card-icon-img">
+                    <h3>Exploration</h3>
+                    <p>Découvrez des niveaux mystérieux générés avec passion. Trouvez votre chemin à travers le
+                        labyrinthe de gardes.</p>
+                </div>
+                <div class="card glass">
+                    <img src="../Shadow-Thief2/assets/front_wall.png" alt="Discrétion" class="card-icon-img">
+                    <h3>Discrétion</h3>
+                    <p>Restez dans l'ombre, évitez le champ de vision des patrouilles et ne faites aucun bruit.</p>
+                </div>
+                <div class="card glass">
+                    <img src="../Shadow-Thief2/assets/emerald.png" alt="Rapidité" class="card-icon-img">
+                    <h3>Rapidité</h3>
+                    <p>Récupérez les émeraudes et atteignez la sortie avant qu'il ne soit trop tard.</p>
+                </div>
+            </div>
+
+            <div class="feature-showcase glass mt-4">
+                <div class="feature-text">
+                    <h3>Un Projet Étudiant Ambitieux</h3>
+                    <p>Développé entièrement en Python avec la bibliothèque Pygame, Shadow Thief est le fruit de
+                        plusieurs semaines de travail intense. Une architecture client-serveur permet des parties
+                        fluides et dynamiques.</p>
+                    <ul class="feature-list">
+                        <li>✔️ Moteur de jeu personnalisé</li>
+                        <li>✔️ Génération de collisions et de lumières</li>
+                        <li>✔️ Implémentation multijoueur</li>
+                    </ul>
+                </div>
+                <div class="feature-image"
+                    style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+                    <img src="../Shadow-Thief2/assets/logo.png" alt="Shadow Thief Logo" class="floating-img"
+                        style="max-width: 80%; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.6));">
+                    <div style="display: flex; gap: 15px;">
+                        <img src="../Shadow-Thief2/assets/emerald.png" alt="Emerald" class="floating-img"
+                            style="width: 50px; animation-delay: 1s;">
+                        <img src="../Shadow-Thief2/assets/sprite_sheet_player2.png" alt="Player Sprite"
+                            class="floating-img"
+                            style="width: 50px; border-radius: 8px; animation-delay: 2s; object-fit: cover;">
+                        <img src="../Shadow-Thief2/assets/sprite_sheet_guard.png" alt="Guard Sprite"
+                            class="floating-img"
+                            style="width: 50px; border-radius: 8px; animation-delay: 0.5s; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Équipe Section -->
+    <section class="section alt-bg" id="equipe">
+        <div class="container">
+            <h2 class="section-title">Notre Équipe</h2>
+            <p class="section-subtitle">Les créateurs derrière le masque.</p>
+
+            <div class="grid team-grid">
+                <div class="team-card glass">
+                    <img src="https://shadowthief.netlify.app/p1.jpg" alt="Amit" class="avatar-img">
+                    <h3>Amit</h3>
+                    <p class="role">Game Designer</p>
+                </div>
+                <div class="team-card glass">
+                    <img src="https://shadowthief.netlify.app/p2.jpg" alt="Ilyes" class="avatar-img">
+                    <h3>Ilyes</h3>
+                    <p class="role">Développeur Multiplayer</p>
+                </div>
+                <div class="team-card glass">
+                    <img src="https://shadowthief.netlify.app/p3.jpg" alt="Edouard" class="avatar-img">
+                    <h3>Edouard</h3>
+                    <p class="role">Développeur IA</p>
+                </div>
+                <div class="team-card glass">
+                    <img src="https://shadowthief.netlify.app/p4.jpg" alt="Maceo" class="avatar-img">
+                    <h3>Maceo</h3>
+                    <p class="role">Développeur Core</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ressources Section -->
+    <section class="section" id="ressources">
+        <div class="container">
+            <h2 class="section-title">Ressources & Crédits</h2>
+            <div class="resources-content glass">
+                <div class="resource-group">
+                    <h3>Bibliothèques Utilisées</h3>
+                    <ul>
+                        <li><a href="https://www.pygame.org/" target="_blank">Pygame</a> - Moteur graphique et gestion
+                            des événements.</li>
+                        <li><a href="https://docs.python.org/3/library/socket.html" target="_blank">Sockets Python</a> -
+                            Architecture réseau client/serveur.</li>
+                    </ul>
+                </div>
+                <div class="resource-group">
+                    <h3>Banques d'Images et Actifs</h3>
+                    <ul>
+                        <li><a href="https://www.dropbox.com/scl/fo/5h1i7fbnz9oc0gd86meaa/AOcQZMcmvk4GHjQppr6SEag?rlkey=ljao663e3smhpqvz5fmtixdrv&e=1&st=rn00fv48&dl=0"
+                                target="_blank">Dossier Assets Dropbox</a> - Toutes les ressources visuelles originales.
+                        </li>
+                        <li>Sprites - Créés et modifiés en interne pour l'ambiance Shadow Thief.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Téléchargement Section -->
+    <section class="section hero-bg" id="telechargement">
+        <div class="container center-text">
+            <h2 class="section-title">Accéder au Projet</h2>
+            <p class="desc mb-4">Prêt à plonger dans l'ombre ? Téléchargez le code source ou lisez notre rapport de
+                soutenance.</p>
+
+            <div class="download-grid">
+                <div class="download-card glass">
+                    <div class="dl-icon">🎮</div>
+                    <h3>Le Jeu complet (Source)</h3>
+                    <p>Découvrez le code source complet du jeu Shadow Thief.</p>
+                    <a href="package_project.bat" download class="btn-primary mt-2">Générer le projet (.bat)</a>
+                </div>
+                <div class="download-card glass">
+                    <div class="dl-icon">📄</div>
+                    <h3>Rapport de Soutenance</h3>
+                    <p>Lisez notre rapport détaillé sur le développement du jeu.</p>
+                    <a href="#" class="btn-secondary mt-2">Bientôt Disponible</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <span class="glitch-mini">SHADOW THIEF</span>
+            </div>
+            <p>&copy; 2026 Projet Étudiant - Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
