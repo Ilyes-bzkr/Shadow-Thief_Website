@@ -32,9 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Scroll Reveal Animations ---
-    const revealElements = document.querySelectorAll('.card, .feature-text, .feature-image, .team-card, .resources-content, .download-card');
-    
-    // Add initial reveal class
+    const revealElements = document.querySelectorAll(
+        '.pillar, .gallery-card, .tech-info, .tech-features, ' +
+        '.team-card, .resources-content, .download-card, .game-banner-content'
+    );
+
     revealElements.forEach(el => {
         el.classList.add('reveal');
     });
@@ -48,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Trigger only once
+                observer.unobserve(entry.target);
             }
         });
     }, revealOptions);
@@ -56,36 +58,32 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => {
         revealOnScroll.observe(el);
     });
-});
 
-// --- Interactive Gameplay Gallery Switcher ---
-window.switchGallery = function(imageSrc, captionText) {
-    const mainImg = document.getElementById('gallery-main-img');
-    const captionEl = document.getElementById('gallery-caption-text');
-    
-    if (mainImg && captionEl) {
-        // Fade out
-        mainImg.style.opacity = '0';
-        
-        setTimeout(() => {
-            mainImg.src = imageSrc;
-            captionEl.textContent = captionText;
-            // Fade in
-            mainImg.style.opacity = '1';
-        }, 200);
-    }
-    
-    // Update active thumb styling
-    const thumbs = document.querySelectorAll('.gallery-thumbs .thumb');
-    thumbs.forEach(thumb => {
-        // Normalize URLs to accurately compare them
-        const thumbSrcNormalized = thumb.getAttribute('src').replace(/\\/g, '/');
-        const targetSrcNormalized = imageSrc.replace(/\\/g, '/');
-        
-        if (thumbSrcNormalized === targetSrcNormalized) {
-            thumb.classList.add('active');
-        } else {
-            thumb.classList.remove('active');
+    // --- Close lightbox with Escape key ---
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeLightbox();
         }
     });
-};
+});
+
+// --- Lightbox ---
+function openLightbox(card) {
+    const img = card.querySelector('img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    if (img && lightbox && lightboxImg) {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}

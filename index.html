@@ -52,54 +52,118 @@
 
     <!-- Présentation Section -->
     <section class="section" id="presentation">
+
+        <!-- Cinematic Game Banner -->
+        <div class="game-banner">
+            <img src="assets/solo.png" alt="Shadow Thief Gameplay" class="game-banner-img">
+            <div class="game-banner-overlay"></div>
+            <div class="game-banner-content">
+                <h2>Plongez dans l'Ombre</h2>
+                <p>Un jeu d'infiltration en 2D où chaque mouvement compte</p>
+            </div>
+        </div>
+
         <div class="container">
-            <h2 class="section-title">Présentation du Projet</h2>
-            <div class="grid presentation-grid">
-                <div class="card glass">
-                    <img src="assets/ground.png" alt="Exploration" class="card-icon-img">
+
+            <!-- Gameplay Pillars -->
+            <div class="pillars">
+                <div class="pillar glass">
+                    <div class="pillar-visual">
+                        <img src="assets/isolated_player.png" alt="Joueur" class="pillar-sprite">
+                        <div class="pillar-glow"></div>
+                    </div>
                     <h3>Exploration</h3>
-                    <p>Découvrez des niveaux mystérieux générés avec passion. Trouvez votre chemin à travers le
-                        labyrinthe de gardes.</p>
+                    <p>Parcourez des niveaux labyrinthiques plongés dans l'obscurité. Chaque recoin cache un danger… ou un trésor.</p>
                 </div>
-                <div class="card glass">
-                    <img src="assets/front_wall.png" alt="Discrétion" class="card-icon-img">
+                <div class="pillar glass">
+                    <div class="pillar-visual">
+                        <img src="assets/isolated_guard.png" alt="Garde" class="pillar-sprite">
+                        <div class="pillar-glow glow-red"></div>
+                    </div>
                     <h3>Discrétion</h3>
-                    <p>Restez dans l'ombre, évitez le champ de vision des patrouilles et ne faites aucun bruit.</p>
+                    <p>Les gardes patrouillent avec des cônes de vision. Restez hors de leur champ de lumière ou c'est la fin.</p>
                 </div>
-                <div class="card glass">
-                    <img src="assets/emerald.png" alt="Rapidité" class="card-icon-img">
-                    <h3>Rapidité</h3>
-                    <p>Récupérez les émeraudes et atteignez la sortie avant qu'il ne soit trop tard.</p>
+                <div class="pillar glass">
+                    <div class="pillar-visual">
+                        <img src="assets/emerald.png" alt="Émeraude" class="pillar-sprite pillar-sprite-sm">
+                        <img src="assets/diamond.png" alt="Diamant" class="pillar-sprite pillar-sprite-sm pillar-sprite-secondary">
+                        <div class="pillar-glow glow-emerald"></div>
+                    </div>
+                    <h3>Collecte</h3>
+                    <p>Ramassez émeraudes et diamants disséminés dans les niveaux. Plus vous en collectez, meilleur est votre score.</p>
                 </div>
             </div>
 
-            <div class="feature-showcase glass mt-4">
-                <div class="feature-text">
-                    <h3>Un Projet Étudiant Ambitieux</h3>
-                    <p>Développé entièrement en Python avec la bibliothèque Pygame, Shadow Thief est le fruit de
-                        plusieurs semaines de travail intense. Une architecture client-serveur permet des parties
-                        fluides et dynamiques.</p>
-                    <ul class="feature-list">
-                        <li><img src="assets/emerald.png" alt="emerald" class="bullet-icon"> Moteur de jeu personnalisé</li>
-                        <li><img src="assets/emerald.png" alt="emerald" class="bullet-icon"> Génération de collisions et de lumières</li>
-                        <li><img src="assets/emerald.png" alt="emerald" class="bullet-icon"> Implémentation multijoueur</li>
-                    </ul>
-                </div>
-                <div class="feature-gallery">
-                    <div class="gallery-main glass">
-                        <img src="assets/solo.png" alt="Shadow Thief Gameplay Solo" class="gallery-img active" id="gallery-main-img">
-                        <div class="gallery-caption" id="gallery-caption-text">Mode Solo : Évitez les gardes et trouvez la sortie</div>
+            <!-- Screenshot Gallery -->
+            <div class="showcase-gallery">
+                <h2 class="section-title">Le Jeu en Action</h2>
+                <p class="section-subtitle">Cliquez sur une image pour l'agrandir</p>
+
+                <div class="gallery-grid">
+                    <div class="gallery-card" onclick="openLightbox(this)">
+                        <img src="assets/solo.png" alt="Mode Solo">
+                        <div class="gallery-card-label">Mode Solo</div>
                     </div>
-                    <div class="gallery-thumbs">
-                        <img src="assets/solo.png" alt="Mode Solo" class="thumb active" onclick="switchGallery('assets/solo.png', 'Mode Solo : Évitez les gardes et trouvez la sortie')">
-                        <img src="assets/multijoueur.png" alt="Mode Coop" class="thumb" onclick="switchGallery('assets/multijoueur.png', 'Mode Multijoueur : Coopérez ou affrontez-vous dans l\'ombre')">
-                        <img src="assets/Capture%20d'écran%202026-05-23%20134354.png" alt="Capture Infiltration" class="thumb" onclick="switchGallery('assets/Capture%20d\'écran%202026-05-23%20134354.png', 'Infiltration Tactique : Restez hors du cône de lumière des gardes')">
-                        <img src="assets/Capture%20d'écran%202026-05-23%20134427.png" alt="Capture Sortie" class="thumb" onclick="switchGallery('assets/Capture%20d\'écran%202026-05-23%20134427.png', 'Échappée : Coopérez à deux pour récolter les diamants et atteindre la sortie')">
+                    <div class="gallery-card" onclick="openLightbox(this)">
+                        <img src="assets/multijoueur.png" alt="Mode Multijoueur">
+                        <div class="gallery-card-label">Mode Multijoueur</div>
+                    </div>
+                    <div class="gallery-card" onclick="openLightbox(this)">
+                        <img src="assets/Capture%20d'écran%202026-05-23%20134354.png" alt="Infiltration">
+                        <div class="gallery-card-label">Infiltration Tactique</div>
+                    </div>
+                    <div class="gallery-card" onclick="openLightbox(this)">
+                        <img src="assets/Capture%20d'écran%202026-05-23%20134427.png" alt="Coopération">
+                        <div class="gallery-card-label">Coopération à Deux</div>
                     </div>
                 </div>
             </div>
+
+            <!-- Tech Block -->
+            <div class="tech-block">
+                <div class="tech-info glass">
+                    <h3>Sous le Capot</h3>
+                    <p>Développé entièrement en <strong>Python</strong> avec <strong>Pygame</strong>, Shadow Thief repose sur une architecture client-serveur pensée pour le multijoueur.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pygame</span>
+                        <span class="tag">Sockets</span>
+                        <span class="tag">Client-Serveur</span>
+                    </div>
+                </div>
+                <div class="tech-features glass">
+                    <ul>
+                        <li>
+                            <img src="assets/emerald.png" alt="" class="bullet-icon">
+                            <span>Moteur de jeu personnalisé avec gestion de collisions</span>
+                        </li>
+                        <li>
+                            <img src="assets/emerald.png" alt="" class="bullet-icon">
+                            <span>Système de lumière et cônes de vision dynamiques</span>
+                        </li>
+                        <li>
+                            <img src="assets/emerald.png" alt="" class="bullet-icon">
+                            <span>Mode multijoueur en temps réel</span>
+                        </li>
+                        <li>
+                            <img src="assets/emerald.png" alt="" class="bullet-icon">
+                            <span>IA de patrouille pour les gardes</span>
+                        </li>
+                        <li>
+                            <img src="assets/diamond.png" alt="" class="bullet-icon">
+                            <span>Niveaux thématiques : Labyrinthe, Forteresse, Entrepôt</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img src="" alt="Aperçu" id="lightbox-img">
+    </div>
 
     <!-- Équipe Section -->
     <section class="section alt-bg" id="equipe">
