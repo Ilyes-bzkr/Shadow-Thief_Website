@@ -350,61 +350,43 @@ a {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
-.pillar-visual {
-    position: relative;
-    width: 100px;
-    height: 100px;
+.pillar-sprite {
+    height: 96px;
+    object-fit: contain;
     margin: 0 auto 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    transition: transform 0.3s;
+    filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.4));
 }
 
-.pillar-sprite {
-    width: 72px;
-    height: 72px;
-    object-fit: contain;
-    position: relative;
-    z-index: 2;
-    transition: transform 0.3s;
+.pillar-sprite-red {
+    filter: drop-shadow(0 4px 12px rgba(239, 68, 68, 0.4));
 }
 
 .pillar:hover .pillar-sprite {
+    transform: scale(1.12);
+}
+
+.pillar:hover .pillar-sprite-red {
+    filter: drop-shadow(0 4px 20px rgba(239, 68, 68, 0.6));
+}
+
+.pillar-gems {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.pillar-gem {
+    height: 56px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 10px rgba(16, 185, 129, 0.4));
+    transition: transform 0.3s;
+}
+
+.pillar:hover .pillar-gem {
     transform: scale(1.15);
-}
-
-.pillar-sprite-sm {
-    width: 52px;
-    height: 52px;
-}
-
-.pillar-sprite-secondary {
-    position: absolute;
-    right: 5px;
-    bottom: 10px;
-    z-index: 1;
-    opacity: 0.7;
-}
-
-.pillar-glow {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-    opacity: 0.5;
-    transition: opacity 0.3s;
-}
-
-.pillar:hover .pillar-glow {
-    opacity: 0.9;
-}
-
-.glow-red {
-    background: radial-gradient(circle, rgba(239, 68, 68, 0.35) 0%, transparent 70%);
-}
-
-.glow-emerald {
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, transparent 70%);
 }
 
 .pillar h3 {
