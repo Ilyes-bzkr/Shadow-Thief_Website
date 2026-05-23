@@ -359,16 +359,8 @@ a {
     filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.4));
 }
 
-.pillar-sprite-red {
-    filter: drop-shadow(0 4px 12px rgba(239, 68, 68, 0.4));
-}
-
 .pillar:hover .pillar-sprite {
     transform: scale(1.12);
-}
-
-.pillar:hover .pillar-sprite-red {
-    filter: drop-shadow(0 4px 20px rgba(239, 68, 68, 0.6));
 }
 
 .pillar-gems {
