@@ -80,24 +80,21 @@
                         plusieurs semaines de travail intense. Une architecture client-serveur permet des parties
                         fluides et dynamiques.</p>
                     <ul class="feature-list">
-                        <li>✔️ Moteur de jeu personnalisé</li>
-                        <li>✔️ Génération de collisions et de lumières</li>
-                        <li>✔️ Implémentation multijoueur</li>
+                        <li><img src="assets/emerald.png" alt="emerald" class="bullet-icon"> Moteur de jeu personnalisé</li>
+                        <li><img src="assets/emerald.png" alt="emerald" class="bullet-icon"> Génération de collisions et de lumières</li>
+                        <li><img src="assets/emerald.png" alt="emerald" class="bullet-icon"> Implémentation multijoueur</li>
                     </ul>
                 </div>
-                <div class="feature-image"
-                    style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
-                    <img src="assets/logo.png" alt="Shadow Thief Logo" class="floating-img"
-                        style="max-width: 80%; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.6));">
-                    <div style="display: flex; gap: 15px;">
-                        <img src="assets/emerald.png" alt="Emerald" class="floating-img"
-                            style="width: 50px; animation-delay: 1s;">
-                        <img src="assets/sprite_sheet_player2.png" alt="Player Sprite"
-                            class="floating-img"
-                            style="width: 50px; border-radius: 8px; animation-delay: 2s; object-fit: cover;">
-                        <img src="assets/sprite_sheet_guard.png" alt="Guard Sprite"
-                            class="floating-img"
-                            style="width: 50px; border-radius: 8px; animation-delay: 0.5s; object-fit: cover;">
+                <div class="feature-gallery">
+                    <div class="gallery-main glass">
+                        <img src="assets/solo.png" alt="Shadow Thief Gameplay Solo" class="gallery-img active" id="gallery-main-img">
+                        <div class="gallery-caption" id="gallery-caption-text">Mode Solo : Évitez les gardes et trouvez la sortie</div>
+                    </div>
+                    <div class="gallery-thumbs">
+                        <img src="assets/solo.png" alt="Mode Solo" class="thumb active" onclick="switchGallery('assets/solo.png', 'Mode Solo : Évitez les gardes et trouvez la sortie')">
+                        <img src="assets/multijoueur.png" alt="Mode Coop" class="thumb" onclick="switchGallery('assets/multijoueur.png', 'Mode Multijoueur : Coopérez ou affrontez-vous dans l\'ombre')">
+                        <img src="assets/Capture%20d'écran%202026-05-23%20134354.png" alt="Capture Infiltration" class="thumb" onclick="switchGallery('assets/Capture%20d\'écran%202026-05-23%20134354.png', 'Infiltration Tactique : Restez hors du cône de lumière des gardes')">
+                        <img src="assets/Capture%20d'écran%202026-05-23%20134427.png" alt="Capture Sortie" class="thumb" onclick="switchGallery('assets/Capture%20d\'écran%202026-05-23%20134427.png', 'Échappée : Coopérez à deux pour récolter les diamants et atteindre la sortie')">
                     </div>
                 </div>
             </div>
@@ -171,13 +168,13 @@
 
             <div class="download-grid">
                 <div class="download-card glass">
-                    <div class="dl-icon">🎮</div>
+                    <img src="assets/emerald.png" alt="Télécharger le Jeu" class="download-icon-img">
                     <h3>Le Jeu complet (Source)</h3>
                     <p>Découvrez le code source complet du jeu Shadow Thief.</p>
-                    <a href="package_project.bat" download class="btn-primary mt-2">Générer le projet (.bat)</a>
+                    <a href="#" id="game-download-link" class="btn-primary mt-2" target="_blank">Télécharger le Projet</a>
                 </div>
                 <div class="download-card glass">
-                    <div class="dl-icon">📄</div>
+                    <img src="assets/diamond.png" alt="Télécharger le Rapport" class="download-icon-img">
                     <h3>Rapport de Soutenance</h3>
                     <p>Lisez notre rapport détaillé sur le développement du jeu.</p>
                     <a href="#" class="btn-secondary mt-2">Bientôt Disponible</a>

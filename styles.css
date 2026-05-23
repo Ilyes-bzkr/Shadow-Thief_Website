@@ -17,6 +17,15 @@
     scroll-behavior: smooth;
 }
 
+img {
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
@@ -333,6 +342,81 @@ a {
     justify-content: center;
 }
 
+.bullet-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    vertical-align: middle;
+    filter: drop-shadow(0 0 5px var(--accent-glow));
+}
+
+.feature-gallery {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.gallery-main {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    border: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(13, 15, 18, 0.85);
+    backdrop-filter: blur(5px);
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    color: #fff;
+    border-top: 1px solid var(--glass-border);
+    font-weight: 500;
+}
+
+.gallery-thumbs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.gallery-thumbs .thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    opacity: 0.6;
+}
+
+.gallery-thumbs .thumb:hover {
+    opacity: 0.9;
+    border-color: var(--accent-glow);
+}
+
+.gallery-thumbs .thumb.active {
+    opacity: 1;
+    border-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
 .floating-img {
     max-width: 100%;
     animation: float 6s ease-in-out infinite;
@@ -446,13 +530,11 @@ a {
     margin-top: 3rem;
 }
 
-.download-card {
-    padding: 3rem 2rem;
-}
-
-.dl-icon {
-    font-size: 3rem;
+.download-icon-img {
+    height: 64px;
+    object-fit: contain;
     margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 8px var(--accent-glow));
 }
 
 .download-card h3 {

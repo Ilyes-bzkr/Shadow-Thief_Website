@@ -57,3 +57,35 @@ document.addEventListener('DOMContentLoaded', () => {
         revealOnScroll.observe(el);
     });
 });
+
+// --- Interactive Gameplay Gallery Switcher ---
+window.switchGallery = function(imageSrc, captionText) {
+    const mainImg = document.getElementById('gallery-main-img');
+    const captionEl = document.getElementById('gallery-caption-text');
+    
+    if (mainImg && captionEl) {
+        // Fade out
+        mainImg.style.opacity = '0';
+        
+        setTimeout(() => {
+            mainImg.src = imageSrc;
+            captionEl.textContent = captionText;
+            // Fade in
+            mainImg.style.opacity = '1';
+        }, 200);
+    }
+    
+    // Update active thumb styling
+    const thumbs = document.querySelectorAll('.gallery-thumbs .thumb');
+    thumbs.forEach(thumb => {
+        // Normalize URLs to accurately compare them
+        const thumbSrcNormalized = thumb.getAttribute('src').replace(/\\/g, '/');
+        const targetSrcNormalized = imageSrc.replace(/\\/g, '/');
+        
+        if (thumbSrcNormalized === targetSrcNormalized) {
+            thumb.classList.add('active');
+        } else {
+            thumb.classList.remove('active');
+        }
+    });
+};
